@@ -137,11 +137,20 @@ const Portfolio = () => {
                 />
                 <div className="absolute inset-0 bg-navy/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                   <div className="flex space-x-4">
-                    <Button size="sm" className="btn-hero">
+                    <Button 
+                      size="sm" 
+                      className="btn-hero"
+                      onClick={() => window.open(project.liveLink, '_blank')}
+                    >
                       <ExternalLink className="w-4 h-4 mr-2" />
                       Live Demo
                     </Button>
-                    <Button size="sm" variant="outline" className="btn-outline">
+                    <Button 
+                      size="sm" 
+                      variant="outline" 
+                      className="btn-outline"
+                      onClick={() => window.open(project.githubLink, '_blank')}
+                    >
                       <Github className="w-4 h-4 mr-2" />
                       Code
                     </Button>
@@ -174,7 +183,14 @@ const Portfolio = () => {
           <p className="text-lg text-text-secondary mb-6">
             Interested in working together? Let's create something amazing!
           </p>
-          <Button className="btn-hero text-lg" size="lg">
+          <Button 
+            className="btn-hero text-lg" 
+            size="lg"
+            onClick={() => {
+              const contactSection = document.getElementById('contact');
+              contactSection?.scrollIntoView({ behavior: 'smooth' });
+            }}
+          >
             Start Your Project
           </Button>
         </div>

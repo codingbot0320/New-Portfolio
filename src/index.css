@@ -192,5 +192,32 @@ All colors MUST be HSL.
     0%, 100% { transform: translateY(0px); }
     50% { transform: translateY(-20px); }
   }
+
+  /* Particle Animations */
+  .particle {
+    animation: particle 8s linear infinite;
+  }
+
+  @keyframes particle {
+    0% { transform: translateY(100vh) translateX(0px); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateY(-100px) translateX(50px); opacity: 0; }
+  }
+
+  /* Glow Effect */
+  .glow {
+    filter: drop-shadow(0 0 20px hsl(176 68% 64% / 0.5));
+  }
+
+  /* Pulse Glow */
+  .pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes pulseGlow {
+    from { filter: drop-shadow(0 0 10px hsl(176 68% 64% / 0.3)); }
+    to { filter: drop-shadow(0 0 30px hsl(176 68% 64% / 0.8)); }
+  }
 }
 
