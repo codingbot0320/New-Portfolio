@@ -57,6 +57,20 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // Portfolio custom colors
+        navy: "hsl(var(--navy))",
+        "navy-light": "hsl(var(--navy-light))",
+        "navy-lighter": "hsl(var(--navy-lighter))",
+        teal: "hsl(var(--teal))",
+        "teal-light": "hsl(var(--teal-light))",
+        purple: "hsl(var(--purple))",
+        "text-primary": "hsl(var(--text-primary))",
+        "text-secondary": "hsl(var(--text-secondary))",
+        "text-muted": "hsl(var(--text-muted))",
+      },
+      fontFamily: {
+        'inter': ['Inter', 'sans-serif'],
+        'sans': ['Inter', 'sans-serif'],
       },
       borderRadius: {
         lg: "var(--radius)",
