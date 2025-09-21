@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Code, Palette, Sparkles, Zap } from "lucide-react";
-import mascotDeveloper from "@/assets/mascot-developer.png";
-import floatingElements from "@/assets/floating-elements.png";
+import { ArrowDown } from "lucide-react";
 
 const Hero = () => {
   const [displayText, setDisplayText] = useState("");
@@ -103,50 +101,6 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Floating Mascot */}
-      <div className="absolute top-1/4 right-8 lg:right-16 hidden lg:block">
-        <div className="relative">
-          <img 
-            src={mascotDeveloper} 
-            alt="Developer Mascot" 
-            className="w-32 h-32 xl:w-40 xl:h-40 float opacity-80 hover:opacity-100 transition-opacity duration-300"
-            style={{animationDelay: '1s'}}
-          />
-          <div className="absolute -top-2 -right-2">
-            <Sparkles className="w-6 h-6 text-primary animate-pulse" />
-          </div>
-        </div>
-      </div>
-
-      {/* Floating Code Elements */}
-      <div className="absolute top-32 left-8 lg:left-16 hidden lg:block">
-        <div className="glass-card p-4 float" style={{animationDelay: '2s'}}>
-          <Code className="w-8 h-8 text-primary mb-2" />
-          <p className="text-sm text-text-secondary">Clean Code</p>
-        </div>
-      </div>
-
-      <div className="absolute bottom-32 left-12 hidden lg:block">
-        <div className="glass-card p-4 float" style={{animationDelay: '3s'}}>
-          <Palette className="w-8 h-8 text-purple mb-2" />
-          <p className="text-sm text-text-secondary">Creative Design</p>
-        </div>
-      </div>
-
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <img 
-          src={floatingElements} 
-          alt="" 
-          className="absolute top-10 left-10 w-64 h-64 opacity-20 float"
-          style={{animationDelay: '0s'}}
-        />
-        <div className="absolute top-20 right-20 w-72 h-72 bg-teal/10 rounded-full blur-3xl float" style={{animationDelay: '1s'}}></div>
-        <div className="absolute bottom-20 left-20 w-96 h-96 bg-purple/10 rounded-full blur-3xl float" style={{animationDelay: '2.5s'}}></div>
-        <div className="absolute top-1/2 left-1/4 w-4 h-4 bg-primary rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
-        <div className="absolute top-1/3 right-1/3 w-2 h-2 bg-purple rounded-full animate-bounce" style={{animationDelay: '2s'}}></div>
-        <Zap className="absolute top-2/3 right-1/4 w-6 h-6 text-primary opacity-50 animate-pulse" style={{animationDelay: '3s'}} />
-      </div>
     </section>
   );
 };

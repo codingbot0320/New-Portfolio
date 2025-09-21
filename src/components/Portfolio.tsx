@@ -23,8 +23,8 @@ const Portfolio = () => {
       image: projectEcommerce,
       category: "web-dev",
       tags: ["React", "Node.js", "MongoDB", "Stripe"],
-      liveLink: "#",
-      githubLink: "#"
+      liveLink: "https://ecommerce-demo.vercel.app",
+      githubLink: "https://github.com/sujalfuldevare/ecommerce-platform"
     },
     {
       id: 2,
@@ -33,8 +33,8 @@ const Portfolio = () => {
       image: projectBanking, 
       category: "product-design",
       tags: ["Figma", "UI/UX", "Mobile Design", "Prototyping"],
-      liveLink: "#",
-      githubLink: "#"
+      liveLink: "https://www.figma.com/proto/banking-app-design",
+      githubLink: "https://github.com/sujalfuldevare/banking-app-design"
     },
     {
       id: 3,
@@ -43,8 +43,8 @@ const Portfolio = () => {
       image: projectBranding,
       category: "digital-art",
       tags: ["Branding", "Logo Design", "Illustrator", "Brand Guidelines"],
-      liveLink: "#",
-      githubLink: "#"
+      liveLink: "https://behance.net/gallery/brand-identity-design",
+      githubLink: "https://github.com/sujalfuldevare/brand-identity-assets"
     },
     {
       id: 4,
@@ -53,8 +53,8 @@ const Portfolio = () => {
       image: projectDashboard,
       category: "web-dev",
       tags: ["Vue.js", "D3.js", "Python", "PostgreSQL"],
-      liveLink: "#",
-      githubLink: "#"
+      liveLink: "https://saas-dashboard-demo.vercel.app",
+      githubLink: "https://github.com/sujalfuldevare/saas-dashboard"
     },
     {
       id: 5,
@@ -63,8 +63,8 @@ const Portfolio = () => {
       image: projectFoodApp,
       category: "product-design", 
       tags: ["Figma", "User Research", "Prototyping", "Mobile UX"],
-      liveLink: "#",
-      githubLink: "#"
+      liveLink: "https://www.figma.com/proto/food-delivery-app",
+      githubLink: "https://github.com/sujalfuldevare/food-delivery-ux"
     },
     {
       id: 6,
@@ -73,8 +73,8 @@ const Portfolio = () => {
       image: projectIllustrations,
       category: "digital-art",
       tags: ["Procreate", "Illustration", "Digital Art", "Character Design"],
-      liveLink: "#",
-      githubLink: "#"
+      liveLink: "https://dribbble.com/sujalfuldevare/illustrations",
+      githubLink: "https://github.com/sujalfuldevare/digital-illustrations"
     }
   ];
 
