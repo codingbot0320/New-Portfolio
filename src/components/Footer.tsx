@@ -80,6 +80,37 @@ const Footer = () => {
           </div>
         </div>
 
+        {/* Enhanced CTA */}
+        <div className="text-center mb-8 glass-card p-8 rounded-2xl">
+          <h3 className="text-2xl font-bold mb-4 gradient-text">
+            Let's Build Something Amazing Together
+          </h3>
+          <p className="text-text-secondary mb-6 max-w-2xl mx-auto">
+            Ready to take your project to the next level? I'm here to help you create 
+            exceptional digital experiences that make a lasting impact.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button 
+              className="btn-hero text-lg" 
+              size="lg"
+              onClick={() => {
+                const contactSection = document.getElementById('contact');
+                contactSection?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
+              Start Your Project
+            </Button>
+            <Button 
+              variant="outline" 
+              className="btn-outline text-lg" 
+              size="lg"
+              onClick={() => window.open('https://calendly.com/sujalfuldevare', '_blank')}
+            >
+              Schedule a Call
+            </Button>
+          </div>
+        </div>
+
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/10">
           <div className="flex items-center space-x-2 text-text-secondary mb-4 md:mb-0">

@@ -1,8 +1,58 @@
+import { useState, useEffect } from "react";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { User, GraduationCap, Briefcase, Award } from "lucide-react";
+import { User, GraduationCap, Briefcase, Award, Download, FileText } from "lucide-react";
 
 const About = () => {
+  const [counters, setCounters] = useState({
+    projects: 0,
+    clients: 0,
+    experience: 0,
+    satisfaction: 0
+  });
+
+  const finalCounters = {
+    projects: 50,
+    clients: 25,
+    experience: 2,
+    satisfaction: 100
+  };
+
+  useEffect(() => {
+    const duration = 2000; // 2 seconds
+    const steps = 60;
+    const stepDuration = duration / steps;
+
+    let currentStep = 0;
+    const timer = setInterval(() => {
+      currentStep += 1;
+      const progress = currentStep / steps;
+      
+      setCounters({
+        projects: Math.floor(finalCounters.projects * progress),
+        clients: Math.floor(finalCounters.clients * progress),
+        experience: Math.floor(finalCounters.experience * progress),
+        satisfaction: Math.floor(finalCounters.satisfaction * progress)
+      });
+
+      if (currentStep >= steps) {
+        clearInterval(timer);
+        setCounters(finalCounters);
+      }
+    }, stepDuration);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const downloadResume = () => {
+    // Create a mock PDF download
+    const link = document.createElement('a');
+    link.href = 'data:application/pdf;base64,'; // This would be your actual PDF base64 or URL
+    link.download = 'Sujal_Fuldevare_Resume.pdf';
+    link.click();
+  };
+
   const highlights = [
     {
       icon: <GraduationCap className="w-6 h-6" />,
@@ -51,7 +101,7 @@ const About = () => {
             {/* Strengths */}
             <div>
               <h3 className="text-xl font-semibold mb-4 text-foreground">Core Strengths</h3>
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-3 mb-6">
                 {strengths.map((strength, index) => (
                   <Badge 
                     key={index}
@@ -61,6 +111,25 @@ const About = () => {
                     {strength}
                   </Badge>
                 ))}
+              </div>
+              
+              {/* Resume Download */}
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button 
+                  onClick={downloadResume}
+                  className="btn-hero flex items-center gap-2"
+                >
+                  <Download className="w-4 h-4" />
+                  Download Resume
+                </Button>
+                <Button 
+                  variant="outline" 
+                  className="btn-outline flex items-center gap-2"
+                  onClick={() => window.open('#portfolio', '_self')}
+                >
+                  <FileText className="w-4 h-4" />
+                  View Portfolio
+                </Button>
               </div>
             </div>
           </div>
@@ -85,16 +154,18 @@ const About = () => {
           </div>
         </div>
 
-        {/* Stats */}
+        {/* Animated Stats */}
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8">
           {[
-            { number: "50+", label: "Projects Completed" },
-            { number: "25+", label: "Happy Clients" },
-            { number: "2+", label: "Years Experience" },
-            { number: "100%", label: "Client Satisfaction" }
+            { key: "projects", number: counters.projects, suffix: "+", label: "Projects Completed" },
+            { key: "clients", number: counters.clients, suffix: "+", label: "Happy Clients" },
+            { key: "experience", number: counters.experience, suffix: "+", label: "Years Experience" },
+            { key: "satisfaction", number: counters.satisfaction, suffix: "%", label: "Client Satisfaction" }
           ].map((stat, index) => (
-            <div key={index} className="text-center">
-              <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">{stat.number}</div>
+            <div key={index} className="text-center fade-in-delay-1">
+              <div className="text-3xl md:text-4xl font-bold gradient-text mb-2 transition-all duration-300">
+                {stat.number}{stat.suffix}
+              </div>
               <div className="text-text-secondary">{stat.label}</div>
             </div>
           ))}
