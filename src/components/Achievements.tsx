@@ -122,7 +122,7 @@ const Achievements = () => {
 
         {/* Achievements Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {achievements.map((achievement, index) => (
+          {achievements.slice(0, 3).map((achievement, index) => (
             <Card 
               key={achievement.id} 
               className={`glass-card border-white/10 hover:border-primary/20 transition-all duration-300 group h-full fade-in-delay-${(index % 3) + 1}`}
