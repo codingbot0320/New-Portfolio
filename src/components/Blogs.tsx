@@ -244,15 +244,6 @@ const Blogs = ({ showAll = false }: { showAll?: boolean }) => {
           </div>
         )}
 
-        {/* Load More Button - Only show on blog page */}
-        {showAll && (
-          <div className="text-center mb-16 fade-in-delay-2">
-            <Button className="btn-hero">
-              <BookOpen className="w-5 h-5 mr-2" />
-              Load More Articles
-            </Button>
-          </div>
-        )}
 
         {/* Newsletter Signup - Only show on blog page */}
         {showAll && (
