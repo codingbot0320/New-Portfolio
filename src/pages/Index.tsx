@@ -4,7 +4,6 @@ import Services from "@/components/Services";
 import Portfolio from "@/components/Portfolio";
 import TechStack from "@/components/TechStack";
 import Achievements from "@/components/Achievements";
-import Blogs from "@/components/Blogs";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Navigation from "@/components/Navigation";
@@ -27,9 +26,6 @@ const Index = () => {
       </div>
       <TechStack />
       <Achievements />
-      <div id="blogs">
-        <Blogs />
-      </div>
       <div id="contact">
         <Contact />
       </div>

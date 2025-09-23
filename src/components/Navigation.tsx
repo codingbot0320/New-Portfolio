@@ -15,7 +15,6 @@ const Navigation = () => {
     { id: "about", label: "About" },
     { id: "services", label: "Services" },
     { id: "portfolio", label: "Portfolio" },
-    { id: "blogs", label: "Blog" },
     { id: "contact", label: "Contact" }
   ];
 
@@ -41,9 +40,7 @@ const Navigation = () => {
   }, []);
 
   const scrollToSection = (sectionId: string) => {
-    if (sectionId === "blogs") {
-      navigate("/blogs");
-    } else if (location.pathname !== "/") {
+    if (location.pathname !== "/") {
       navigate("/");
       setTimeout(() => {
         const element = document.getElementById(sectionId);
@@ -83,6 +80,12 @@ const Navigation = () => {
               )}
             </button>
           ))}
+          <button
+            onClick={() => navigate('/blogs')}
+            className="relative px-4 py-2 text-sm font-medium transition-all duration-300 rounded-full text-text-secondary hover:text-primary hover:bg-primary/5"
+          >
+            Blog
+          </button>
         </div>
       </nav>
 
@@ -116,6 +119,12 @@ const Navigation = () => {
                 {item.label}
               </button>
             ))}
+            <button
+              onClick={() => navigate('/blogs')}
+              className="text-2xl font-medium transition-all duration-300 px-8 py-4 rounded-full text-text-secondary hover:text-primary hover:bg-primary/5"
+            >
+              Blog
+            </button>
           </div>
         </div>
       )}
