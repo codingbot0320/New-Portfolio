@@ -7,43 +7,43 @@ const Services = () => {
     {
       icon: <Code className="w-8 h-8" />,
       title: "Web Development",
-      description: "Responsive, fast, and SEO-optimized websites built with modern frameworks like React, Next.js, and TypeScript.",
-      features: ["Responsive Design", "Performance Optimization", "SEO Ready", "Modern Frameworks"],
+      description: "Modern, responsive websites with React & TypeScript",
+      features: ["React", "TypeScript", "Next.js"],
       color: "text-teal"
     },
     {
       icon: <Palette className="w-8 h-8" />,
       title: "UI/UX Design", 
-      description: "User-centered design solutions that balance aesthetics with functionality for exceptional user experiences.",
-      features: ["User Research", "Wireframing", "Prototyping", "Design Systems"],
+      description: "Beautiful interfaces that users love",
+      features: ["Figma", "Prototyping", "User Research"],
       color: "text-purple"
     },
     {
       icon: <Smartphone className="w-8 h-8" />,
       title: "Product Design",
-      description: "End-to-end product design from concept to launch, ensuring your digital product stands out in the market.",
-      features: ["Strategy & Planning", "User Journey Mapping", "Interface Design", "Usability Testing"],
+      description: "End-to-end digital product creation",
+      features: ["Strategy", "Wireframes", "Testing"],
       color: "text-primary"
     },
     {
       icon: <Brush className="w-8 h-8" />,
-      title: "Visual Design & Branding",
-      description: "Create compelling brand identities and visual assets that communicate your brand's personality effectively.",
-      features: ["Logo Design", "Brand Guidelines", "Marketing Materials", "Social Media Assets"],
+      title: "Visual Branding",
+      description: "Memorable brand identities & assets",
+      features: ["Logos", "Brand Guide", "Assets"],
       color: "text-teal-light"
     },
     {
       icon: <Globe className="w-8 h-8" />,
-      title: "Digital Art & Illustrations",
-      description: "Custom illustrations and digital artwork that add personality and uniqueness to your projects.",
-      features: ["Custom Illustrations", "Icon Design", "Digital Artwork", "Creative Concepts"],
+      title: "Digital Illustrations",
+      description: "Custom artwork & creative visuals",
+      features: ["Illustrations", "Icons", "Concepts"],
       color: "text-purple"
     },
     {
       icon: <Zap className="w-8 h-8" />,
-      title: "Performance Optimization",
-      description: "Boost your website's speed and performance with advanced optimization techniques and best practices.",
-      features: ["Speed Optimization", "Core Web Vitals", "Mobile Performance", "SEO Enhancement"],
+      title: "Performance",
+      description: "Lightning-fast, optimized websites",
+      features: ["Speed", "SEO", "Core Vitals"],
       color: "text-primary"
     }
   ];

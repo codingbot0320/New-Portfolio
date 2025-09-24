@@ -4,47 +4,33 @@ import { Card, CardContent } from "@/components/ui/card";
 const TechStack = () => {
   const techCategories = [
     {
-      category: "Frontend",
+      category: "Proficient",
+      description: "Technologies I use daily and am highly experienced with",
       technologies: [
-        { name: "React", icon: "⚛️", level: 95 },
-        { name: "TypeScript", icon: "🟦", level: 90 },
-        { name: "Next.js", icon: "▲", level: 85 },
-        { name: "Tailwind CSS", icon: "🎨", level: 95 },
-        { name: "Vue.js", icon: "💚", level: 80 },
-        { name: "JavaScript", icon: "💛", level: 95 }
+        { name: "React", icon: "⚛️" },
+        { name: "TypeScript", icon: "🟦" },
+        { name: "JavaScript", icon: "💛" },
+        { name: "Tailwind CSS", icon: "🎨" },
+        { name: "Node.js", icon: "🟢" },
+        { name: "MySQL", icon: "🗄️" },
+        { name: "Figma", icon: "🎨" },
+        { name: "Git", icon: "📝" }
       ]
     },
     {
-      category: "Backend",
+      category: "Familiar", 
+      description: "Technologies I've worked with and continue to learn",
       technologies: [
-        { name: "Node.js", icon: "🟢", level: 85 },
-        { name: "Express.js", icon: "🚀", level: 80 },
-        { name: "Python", icon: "🐍", level: 75 },
-        { name: "MongoDB", icon: "🍃", level: 80 },
-        { name: "PostgreSQL", icon: "🐘", level: 70 },
-        { name: "Firebase", icon: "🔥", level: 85 }
-      ]
-    },
-    {
-      category: "Design Tools",
-      technologies: [
-        { name: "Figma", icon: "🎨", level: 95 },
-        { name: "Adobe XD", icon: "🔷", level: 85 },
-        { name: "Illustrator", icon: "🎯", level: 80 },
-        { name: "Photoshop", icon: "📸", level: 75 },
-        { name: "Procreate", icon: "✏️", level: 90 },
-        { name: "Framer", icon: "📱", level: 70 }
-      ]
-    },
-    {
-      category: "Tools & Others",
-      technologies: [
-        { name: "Git", icon: "📝", level: 90 },
-        { name: "Docker", icon: "🐳", level: 70 },
-        { name: "Vercel", icon: "▲", level: 85 },
-        { name: "AWS", icon: "☁️", level: 65 },
-        { name: "Stripe", icon: "💳", level: 80 },
-        { name: "GraphQL", icon: "📊", level: 75 }
+        { name: "Next.js", icon: "▲" },
+        { name: "Vue.js", icon: "💚" },
+        { name: "Python", icon: "🐍" },
+        { name: "MongoDB", icon: "🍃" },
+        { name: "PostgreSQL", icon: "🐘" },
+        { name: "Firebase", icon: "🔥" },
+        { name: "Adobe XD", icon: "🔷" },
+        { name: "Docker", icon: "🐳" },
+        { name: "AWS", icon: "☁️" },
+        { name: "GraphQL", icon: "📊" }
       ]
     }
   ];
@@ -81,23 +67,16 @@ const TechStack = () => {
           {techCategories.map((category, categoryIndex) => (
             <Card key={categoryIndex} className={`glass-card border-white/10 hover:border-primary/20 transition-all duration-300 fade-in-delay-${categoryIndex + 1}`}>
               <CardContent className="p-8">
-                <h3 className="text-2xl font-bold mb-6 gradient-text">{category.category}</h3>
-                <div className="space-y-4">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className={`w-3 h-3 rounded-full ${categoryIndex === 0 ? 'bg-gradient-to-r from-green-400 to-emerald-500' : 'bg-gradient-to-r from-blue-400 to-cyan-500'}`}></div>
+                  <h3 className="text-2xl font-bold gradient-text">{category.category}</h3>
+                </div>
+                <p className="text-sm text-text-secondary mb-6">{category.description}</p>
+                <div className="grid grid-cols-2 gap-3">
                   {category.technologies.map((tech, techIndex) => (
-                    <div key={techIndex} className="flex items-center justify-between">
-                      <div className="flex items-center space-x-3">
-                        <span className="text-2xl">{tech.icon}</span>
-                        <span className="text-foreground font-medium">{tech.name}</span>
-                      </div>
-                      <div className="flex items-center space-x-3">
-                        <div className="w-24 bg-background/50 rounded-full h-2 overflow-hidden">
-                          <div 
-                            className="h-full bg-gradient-to-r from-primary to-primary-light transition-all duration-1000"
-                            style={{ width: `${tech.level}%` }}
-                          />
-                        </div>
-                        <span className="text-text-secondary text-sm w-8">{tech.level}%</span>
-                      </div>
+                    <div key={techIndex} className="flex items-center space-x-3 p-3 bg-background/30 rounded-lg hover:bg-background/50 transition-colors">
+                      <span className="text-xl">{tech.icon}</span>
+                      <span className="text-foreground font-medium text-sm">{tech.name}</span>
                     </div>
                   ))}
                 </div>
