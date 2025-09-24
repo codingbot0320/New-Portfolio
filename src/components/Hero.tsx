@@ -98,7 +98,7 @@ const Hero = () => {
           <div className="hidden lg:flex justify-center items-center relative">
             <div className="relative">
               <img 
-                src="/api/placeholder/400/600" 
+                src="/lovable-uploads/WhatsApp Image 2025-09-22 at 22.14.14_7db3e6bf.jpg.png" 
                 alt="Sujal Fuldevare - Portfolio Photo" 
                 className="w-80 h-auto object-cover rounded-2xl transform rotate-6 shadow-2xl fade-in-delay-1"
               />
