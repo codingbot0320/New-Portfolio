@@ -5,46 +5,40 @@ import { Code, Palette, Smartphone, Brush, Globe, Zap } from "lucide-react";
 const Services = () => {
   const services = [
     {
-      icon: <Code className="w-8 h-8" />,
+      icon: <Code className="w-12 h-12" />,
       title: "Web Development",
-      description: "Modern, responsive websites with React & TypeScript",
-      features: ["React", "TypeScript", "Next.js"],
-      color: "text-teal"
+      subtitle: "React • TypeScript • Next.js",
+      gradient: "from-blue-500 to-cyan-500"
     },
     {
-      icon: <Palette className="w-8 h-8" />,
+      icon: <Palette className="w-12 h-12" />,
       title: "UI/UX Design", 
-      description: "Beautiful interfaces that users love",
-      features: ["Figma", "Prototyping", "User Research"],
-      color: "text-purple"
+      subtitle: "Figma • Prototyping • Research",
+      gradient: "from-purple-500 to-pink-500"
     },
     {
-      icon: <Smartphone className="w-8 h-8" />,
+      icon: <Smartphone className="w-12 h-12" />,
       title: "Product Design",
-      description: "End-to-end digital product creation",
-      features: ["Strategy", "Wireframes", "Testing"],
-      color: "text-primary"
+      subtitle: "Strategy • Wireframes • Testing",
+      gradient: "from-emerald-500 to-teal-500"
     },
     {
-      icon: <Brush className="w-8 h-8" />,
+      icon: <Brush className="w-12 h-12" />,
       title: "Visual Branding",
-      description: "Memorable brand identities & assets",
-      features: ["Logos", "Brand Guide", "Assets"],
-      color: "text-teal-light"
+      subtitle: "Logos • Brand Guide • Assets",
+      gradient: "from-orange-500 to-red-500"
     },
     {
-      icon: <Globe className="w-8 h-8" />,
-      title: "Digital Illustrations",
-      description: "Custom artwork & creative visuals",
-      features: ["Illustrations", "Icons", "Concepts"],
-      color: "text-purple"
+      icon: <Globe className="w-12 h-12" />,
+      title: "Digital Art",
+      subtitle: "Illustrations • Icons • Concepts",
+      gradient: "from-indigo-500 to-purple-500"
     },
     {
-      icon: <Zap className="w-8 h-8" />,
+      icon: <Zap className="w-12 h-12" />,
       title: "Performance",
-      description: "Lightning-fast, optimized websites",
-      features: ["Speed", "SEO", "Core Vitals"],
-      color: "text-primary"
+      subtitle: "Speed • SEO • Optimization",
+      gradient: "from-yellow-500 to-orange-500"
     }
   ];
 
@@ -59,34 +53,25 @@ const Services = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             What I <span className="gradient-text">Offer</span>
           </h2>
-          <p className="text-xl text-text-secondary max-w-3xl mx-auto">
-            Comprehensive digital solutions tailored to your needs. From concept to completion, 
-            I deliver high-quality work that drives results.
+          <p className="text-xl text-text-secondary max-w-2xl mx-auto">
+            Creating digital experiences that make a difference
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
-            <Card key={index} className="service-card h-full">
-              <CardHeader>
-                <div className={`w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-4 ${service.color}`}>
+            <Card key={index} className="group glass-card border-white/10 hover:border-primary/30 transition-all duration-500 hover:scale-105 cursor-pointer">
+              <CardContent className="p-8 text-center">
+                <div className={`w-20 h-20 mx-auto mb-6 bg-gradient-to-br ${service.gradient} rounded-3xl flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300`}>
                   {service.icon}
                 </div>
-                <CardTitle className="text-xl mb-2">{service.title}</CardTitle>
-                <CardDescription className="text-text-secondary">
-                  {service.description}
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-2">
-                  {service.features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center space-x-2">
-                      <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
-                      <span className="text-sm text-text-secondary">{feature}</span>
-                    </div>
-                  ))}
-                </div>
+                <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
+                  {service.title}
+                </h3>
+                <p className="text-sm text-text-secondary font-medium">
+                  {service.subtitle}
+                </p>
               </CardContent>
             </Card>
           ))}
