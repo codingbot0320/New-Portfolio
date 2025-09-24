@@ -3,7 +3,7 @@ import About from "@/components/About";
 import Services from "@/components/Services";
 import Portfolio from "@/components/Portfolio";
 import TechStack from "@/components/TechStack";
-import Achievements from "@/components/Achievements";
+
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Navigation from "@/components/Navigation";
@@ -25,7 +25,6 @@ const Index = () => {
         <Portfolio />
       </div>
       <TechStack />
-      <Achievements />
       <div id="contact">
         <Contact />
       </div>
