@@ -49,54 +49,68 @@ const Hero = () => {
   return (
     <section className="min-h-screen flex items-center justify-center section-padding relative overflow-hidden">
       <div className="container-custom">
-        <div className="text-center max-w-4xl mx-auto">
-          {/* Hero Title */}
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 fade-in">
-            <span className="text-foreground">Sujal</span>{" "}
-            <span className="gradient-text">Fuldevare</span>
-          </h1>
-          
-          {/* Typing Animation */}
-          <div className="h-16 md:h-20 mb-8 fade-in-delay-1">
-            <p className="text-2xl md:text-4xl font-medium text-text-secondary">
-              I design & build{" "}
-              <span className="text-primary typing font-semibold">
-                {displayText}
-              </span>
-            </p>
-          </div>
-
-          {/* Subtitle */}
-          <p className="text-lg md:text-xl text-text-secondary max-w-2xl mx-auto mb-12 fade-in-delay-2">
-            Helping brands stand out with modern digital solutions. 
-            Specializing in responsive websites, UI/UX design, and creative digital art.
-          </p>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16 fade-in-delay-2">
-            <Button 
-              onClick={scrollToContact}
-              className="btn-hero text-lg"
-              size="lg"
-            >
-              Hire Me Now
-            </Button>
-            <Button 
-              onClick={scrollToPortfolio}
-              variant="outline" 
-              className="btn-outline text-lg"
-              size="lg"
-            >
-              View Portfolio
-            </Button>
-          </div>
-
-          {/* Scroll Indicator */}
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 fade-in-delay-2">
-            <div className="flex flex-col items-center">
-              <p className="text-text-muted text-sm mb-2">Scroll to explore</p>
-              <ArrowDown className="w-6 h-6 text-primary animate-bounce" />
+        <div className="grid lg:grid-cols-2 gap-8 items-center max-w-7xl mx-auto">
+          {/* Left Column - Content */}
+          <div className="text-center lg:text-left">
+            {/* Hero Title */}
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 fade-in">
+              <span className="text-foreground">Sujal</span>{" "}
+              <span className="gradient-text">Fuldevare</span>
+            </h1>
+            
+            {/* Typing Animation */}
+            <div className="h-16 md:h-20 mb-8 fade-in-delay-1">
+              <p className="text-2xl md:text-3xl lg:text-4xl font-medium text-text-secondary">
+                I design & build{" "}
+                <span className="text-primary typing font-semibold">
+                  {displayText}
+                </span>
+              </p>
             </div>
+
+            {/* Subtitle */}
+            <p className="text-lg md:text-xl text-text-secondary max-w-2xl lg:max-w-none mb-12 fade-in-delay-2">
+              Helping brands stand out with modern digital solutions. 
+              Specializing in responsive websites, UI/UX design, and creative digital art.
+            </p>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start items-center mb-16 lg:mb-0 fade-in-delay-2">
+              <Button 
+                onClick={scrollToContact}
+                className="btn-hero text-lg"
+                size="lg"
+              >
+                Hire Me Now
+              </Button>
+              <Button 
+                onClick={scrollToPortfolio}
+                variant="outline" 
+                className="btn-outline text-lg"
+                size="lg"
+              >
+                View Portfolio
+              </Button>
+            </div>
+          </div>
+
+          {/* Right Column - Photo */}
+          <div className="hidden lg:flex justify-center items-center relative">
+            <div className="relative">
+              <img 
+                src="/api/placeholder/400/600" 
+                alt="Sujal Fuldevare - Portfolio Photo" 
+                className="w-80 h-auto object-cover rounded-2xl transform rotate-6 shadow-2xl fade-in-delay-1"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 fade-in-delay-2">
+          <div className="flex flex-col items-center">
+            <p className="text-text-muted text-sm mb-2">Scroll to explore</p>
+            <ArrowDown className="w-6 h-6 text-primary animate-bounce" />
           </div>
         </div>
       </div>
