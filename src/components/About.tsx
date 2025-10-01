@@ -1,14 +1,15 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { User, GraduationCap, Briefcase, Award, Download, FileText, Coffee, Heart, Zap, MapPin } from "lucide-react";
+import { User, GraduationCap, Briefcase, Award, Download, FileText, Heart, Zap, MapPin } from "lucide-react";
+import cricketIcon from "@/assets/cricket.png";
 
 const About = () => {
 
   const downloadResume = () => {
     // Create a mock PDF download
     const link = document.createElement('a');
-    link.href = 'data:application/pdf;base64,'; // This would be your actual PDF base64 or URL
+    link.href =  'https://drive.google.com/file/d/1zWX0j8K_k2SbePBxtZfi5nY8Ruiwl-2N/view?usp=sharing'; // This would be your actual PDF base64 or URL
     link.download = 'Sujal_Fuldevare_Resume.pdf';
     link.click();
   };
@@ -22,7 +23,8 @@ const About = () => {
     {
       icon: <Briefcase className="w-6 h-6" />,
       title: "Experience",
-      description: "Internships at Cognifyz & Prodigy InfoTech - Real-world expertise"
+      description:  "Internships at Hypstuma & Edelsteine Technolofy Private limited - Real-world expertise"
+
     },
     {
       icon: <Award className="w-6 h-6" />,
@@ -31,7 +33,7 @@ const About = () => {
     }
   ];
 
-  const strengths = ["Creative Problem Solver", "Tech Enthusiast", "Detail-Oriented", "Client-Focused"];
+  const strengths = ["Creative Problem Solver", "Tech Enthusiast", "Full-Stack Developer", "Leadership"];
 
   return (
     <section id="about" className="section-padding bg-navy-light/30">
@@ -48,9 +50,12 @@ const About = () => {
                 Crafting Digital <span className="gradient-text">Experiences</span>
               </h2>
               <p className="text-lg text-text-secondary leading-relaxed mb-6">
-                I'm a passionate freelance web developer and visual designer dedicated to creating 
-                impactful digital solutions. With a strong foundation in modern technologies and 
-                a keen eye for design, I help businesses and individuals bring their visions to life.
+                   I'm a passionate web developer and visual designer driven by the idea of blending
+                creativity with technology to craft impactful digital solutions.
+                I enjoy turning ideas into reality, whether it’s building modern, responsive 
+                websites or designing visuals that tell a story. With a strong foundation in 
+                web development and visual design.
+
               </p>
               <p className="text-lg text-text-secondary leading-relaxed">
                 My journey combines technical expertise with creative thinking, ensuring every 
@@ -118,11 +123,15 @@ const About = () => {
         <div className="mt-16 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           <Card className="glass-card border-white/10 hover:border-primary/20 transition-all duration-300 group">
             <CardContent className="p-6 text-center">
-              <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-orange-400 to-red-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                <Coffee className="w-8 h-8 text-white" />
+              <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 overflow-hidden">
+                <img 
+                  src={cricketIcon} 
+                  alt="Cricket equipment - bat and ball" 
+                  className="w-10 h-10 object-contain"
+                />
               </div>
-              <h3 className="font-semibold text-foreground mb-2">Coffee Lover</h3>
-              <p className="text-text-secondary text-sm">5+ cups daily fuel my creativity</p>
+              <h3 className="font-semibold text-foreground mb-2">Cricketer</h3>
+              <p className="text-text-secondary text-sm">Cricket gives me happiness & teaches me strategy</p>
             </CardContent>
           </Card>
 
@@ -157,7 +166,7 @@ const About = () => {
           </Card>
         </div>
 
-        {/* Interactive Timeline */}
+                {/* Interactive Timeline */}
         <div className="mt-16">
           <h3 className="text-2xl font-bold text-center mb-8">
             My <span className="gradient-text">Journey</span>
@@ -170,8 +179,8 @@ const About = () => {
                 <div className="w-5/12 text-right pr-8">
                   <Card className="glass-card border-white/10 p-6">
                     <h4 className="font-semibold text-primary mb-2">Started Learning</h4>
-                    <p className="text-text-secondary text-sm">Discovered my passion for web development and design</p>
-                    <span className="text-xs text-text-muted">2021</span>
+                    <p className="text-text-secondary text-sm">Discovered my passion for coding, web development, and design — laid the foundation of my tech journey.</p>
+                    <span className="text-xs text-text-muted">2023</span>
                   </Card>
                 </div>
                 <div className="w-8 h-8 bg-gradient-to-br from-primary to-primary/50 rounded-full relative z-10 flex items-center justify-center">
@@ -187,9 +196,9 @@ const About = () => {
                 </div>
                 <div className="w-5/12 pl-8">
                   <Card className="glass-card border-white/10 p-6">
-                    <h4 className="font-semibold text-primary mb-2">First Internship</h4>
-                    <p className="text-text-secondary text-sm">Joined Cognifyz Technologies as Web Developer Intern</p>
-                    <span className="text-xs text-text-muted">2022</span>
+                    <h4 className="font-semibold text-primary mb-2">First Project</h4>
+                    <p className="text-text-secondary text-sm">Created my first full-stack project, turning ideas into reality and gaining hands-on development skills.</p>
+                    <span className="text-xs text-text-muted">2023</span>
                   </Card>
                 </div>
               </div>
@@ -197,9 +206,9 @@ const About = () => {
               <div className="flex items-center justify-between">
                 <div className="w-5/12 text-right pr-8">
                   <Card className="glass-card border-white/10 p-6">
-                    <h4 className="font-semibold text-primary mb-2">Freelancing Journey</h4>
-                    <p className="text-text-secondary text-sm">Started taking on freelance projects and building portfolio</p>
-                    <span className="text-xs text-text-muted">2023</span>
+                    <h4 className="font-semibold text-primary mb-2">Professional Experience</h4>
+                    <p className="text-text-secondary text-sm">Joined internships, collaborated with teams, and built real-world projects that shaped my portfolio.</p>
+                    <span className="text-xs text-text-muted">2024</span>
                   </Card>
                 </div>
                 <div className="w-8 h-8 bg-gradient-to-br from-primary to-primary/50 rounded-full relative z-10 flex items-center justify-center">
@@ -215,9 +224,9 @@ const About = () => {
                 </div>
                 <div className="w-5/12 pl-8">
                   <Card className="glass-card border-white/10 p-6 border-primary/30">
-                    <h4 className="font-semibold text-primary mb-2">Present Day</h4>
-                    <p className="text-text-secondary text-sm">Building amazing projects and helping brands grow online</p>
-                    <span className="text-xs text-text-muted">2024</span>
+                    <h4 className="font-semibold text-primary mb-2">Present & Beyond</h4>
+                    <p className="text-text-secondary text-sm">Currently working on advanced projects, preparing for entrepreneurship, and laying the foundation of my startup & NGO.</p>
+                    <span className="text-xs text-text-muted">2025</span>
                   </Card>
                 </div>
               </div>
@@ -229,4 +238,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default About;

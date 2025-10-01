@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter, Instagram } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
@@ -25,33 +25,56 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
+ const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setIsSubmitting(true);
+
+  try {
+    const response = await fetch("https://formspree.io/f/myznknoa", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(formData),
+    });
+
+    if (response.ok) {
       toast({
         title: "Message Sent!",
         description: "Thank you for your message. I'll get back to you soon!",
       });
       setFormData({ name: "", email: "", subject: "", message: "" });
-      setIsSubmitting(false);
-    }, 2000);
-  };
+    } else {
+      toast({
+        title: "Error",
+        description: "Something went wrong. Please try again later.",
+        variant: "destructive",
+      });
+    }
+  } catch (error) {
+    toast({
+      title: "Error",
+      description: "Failed to send message. Check your internet connection.",
+      variant: "destructive",
+    });
+  } finally {
+    setIsSubmitting(false);
+  }
+};
+
 
   const contactInfo = [
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email",
-      content: "sujal.fuldevare@gmail.com",
-      link: "mailto:sujal.fuldevare@gmail.com"
+      content: "sujalfuldevare1531e@gmail.com",
+      link: "mailto:sujalfuldevare1531e@gmail.com"
     },
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Phone", 
-      content: "+91 9876543210",
-      link: "tel:+919876543210"
+      content: "+91 7899102932",
+      link: "tel:+917899102932"
     },
     {
       icon: <MapPin className="w-6 h-6" />,
@@ -62,9 +85,9 @@ const Contact = () => {
   ];
 
   const socialLinks = [
-    { icon: <Github className="w-5 h-5" />, label: "GitHub", link: "https://github.com/sujalfuldevare" },
-    { icon: <Linkedin className="w-5 h-5" />, label: "LinkedIn", link: "https://linkedin.com/in/sujalfuldevare" },
-    { icon: <Twitter className="w-5 h-5" />, label: "Twitter", link: "https://twitter.com/sujalfuldevare" }
+    { icon: <Github className="w-5 h-5" />, label: "GitHub", link: "https://github.com/codingbot0320" },
+    { icon: <Linkedin className="w-5 h-5" />, label: "LinkedIn", link: "https://www.linkedin.com/in/sujal-fuldevare-aa22912a9" },
+    { icon: <Instagram className="w-5 h-5" />, label: "Instagram", link: "https://www.instagram.com/sujal_0320/" }
   ];
 
   return (

@@ -221,7 +221,8 @@ const Blogs = ({ showAll = false }: { showAll?: boolean }) => {
                     variant="ghost"
                     size="sm"
                     className="text-primary hover:text-primary-foreground hover:bg-primary group-hover:translate-x-1 transition-all duration-300"
-                  >
+                  > 
+                  
                     Read More
                     <ArrowRight className="w-4 h-4 ml-1" />
                   </Button>

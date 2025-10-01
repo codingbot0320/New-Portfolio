@@ -1,6 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Heart, Github, Linkedin, Twitter, Mail, ArrowUp } from "lucide-react";
+import { Heart, Github, Linkedin, Mail, ArrowUp, Instagram } from "lucide-react";
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -8,10 +8,10 @@ const Footer = () => {
   };
 
   const socialLinks = [
-    { icon: <Github className="w-5 h-5" />, label: "GitHub", link: "https://github.com/sujalfuldevare" },
-    { icon: <Linkedin className="w-5 h-5" />, label: "LinkedIn", link: "https://linkedin.com/in/sujalfuldevare" },
-    { icon: <Twitter className="w-5 h-5" />, label: "Twitter", link: "https://twitter.com/sujalfuldevare" },
-    { icon: <Mail className="w-5 h-5" />, label: "Email", link: "mailto:sujal.fuldevare@gmail.com" }
+       { icon: <Github className="w-5 h-5" />, label: "GitHub", link: "https://github.com/codingbot0320" },
+    { icon: <Linkedin className="w-5 h-5" />, label: "LinkedIn", link: "https://www.linkedin.com/in/sujal-fuldevare-aa22912a9" },
+    { icon: <Instagram className="w-5 h-5" />, label: "Instagram", link: "https://www.instagram.com/sujal_0320/" },
+    { icon: <Mail className="w-5 h-5" />, label: "Email", link: "mailto:sujalfuldevare1531@gmail.com" }
   ];
 
   const quickLinks = [

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, Code, Palette, Sparkles } from "lucide-react";
 
 const Hero = () => {
   const [displayText, setDisplayText] = useState("");
@@ -9,8 +9,8 @@ const Hero = () => {
   
   const typingTexts = [
     "Web Developer",
-    "Visual Designer", 
-    "Product Designer",
+    "UI/UX Designer", 
+    "Product Developer",
     "Digital Artist"
   ];
 
@@ -61,7 +61,7 @@ const Hero = () => {
             {/* Typing Animation */}
             <div className="h-16 md:h-20 mb-8 fade-in-delay-1">
               <p className="text-2xl md:text-3xl lg:text-4xl font-medium text-text-secondary">
-                I design & build{" "}
+                I design & build as a{" "}
                 <span className="text-primary typing font-semibold">
                   {displayText}
                 </span>
@@ -70,36 +70,38 @@ const Hero = () => {
 
             {/* Subtitle */}
             <p className="text-lg md:text-xl text-text-secondary max-w-2xl lg:max-w-none mb-12 fade-in-delay-2">
-              Helping brands stand out with modern digital solutions. 
-              Specializing in responsive websites, UI/UX design, and creative digital art.
+              Transforming ideas into stunning digital realities. I specialize in creating 
+                responsive websites, intuitive user interfaces, and engaging digital experiences 
+                that help businesses thrive in the digital age.
             </p>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start items-center mb-16 lg:mb-0 fade-in-delay-2">
-              <Button 
-                onClick={scrollToContact}
-                className="btn-hero text-lg"
-                size="lg"
-              >
-                Hire Me Now
-              </Button>
-              <Button 
-                onClick={scrollToPortfolio}
-                variant="outline" 
-                className="btn-outline text-lg"
-                size="lg"
-              >
-                View Portfolio
-              </Button>
-            </div>
-          </div>
+
+  {/* CTA Buttons */}
+  <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start items-center mb-16 lg:mb-0">
+    <Button 
+      onClick={scrollToContact}
+      className="btn-hero text-lg"
+      size="lg"
+    >
+      Hire Me Now
+    </Button>
+    <Button 
+      onClick={scrollToPortfolio}
+      variant="outline" 
+      className="btn-outline text-lg"
+      size="lg"
+    >
+      View My Work
+    </Button>
+  </div>
+</div>
 
           {/* Right Column - Photo */}
           <div className="hidden lg:flex justify-center items-center relative">
             <div className="relative">
-              <img 
-                src="/lovable-uploads/WhatsApp Image 2025-09-22 at 22.14.14_7db3e6bf.jpg.png" 
-                alt="Sujal Fuldevare - Portfolio Photo" 
+          <img 
+            src="/lovable-uploads/WhatsApp_Image_2025-09-22.jpg.jpg" 
+            alt="Sujal Fuldevare - Portfolio Photo" 
                 className="w-80 h-auto object-cover rounded-2xl transform rotate-6 shadow-2xl fade-in-delay-1"
               />
             </div>

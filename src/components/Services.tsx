@@ -30,8 +30,8 @@ const Services = () => {
     },
     {
       icon: <Globe className="w-12 h-12" />,
-      title: "Digital Art",
-      subtitle: "Illustrations • Icons • Concepts",
+      title: "Business Management",
+      subtitle: "Strategy • Solutions • Leadership",
       gradient: "from-indigo-500 to-purple-500"
     },
     {
@@ -54,7 +54,7 @@ const Services = () => {
             What I <span className="gradient-text">Offer</span>
           </h2>
           <p className="text-xl text-text-secondary max-w-2xl mx-auto">
-            Creating digital experiences that make a difference
+            Creating immersive experiences that makes a difference
           </p>
         </div>
 
@@ -84,6 +84,8 @@ const Services = () => {
             <p className="text-lg text-text-secondary">A structured approach to deliver exceptional results</p>
           </div>
           
+          
+
           <div className="grid md:grid-cols-4 gap-8">
             {[
               { step: "01", title: "Consultation", description: "Understanding your needs and goals" },

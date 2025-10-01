@@ -5,12 +5,13 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ExternalLink, Github, Palette, Code, Smartphone } from "lucide-react";
 
 // Import project images
-import projectEcommerce from "@/assets/project-ecommerce.jpg";
+import projectResearch from "@/assets/project-Research.png";
 import projectBanking from "@/assets/project-banking.jpg";
 import projectBranding from "@/assets/project-branding.jpg";
 import projectDashboard from "@/assets/project-dashboard.jpg";
 import projectFoodApp from "@/assets/project-food-app.jpg";
-import projectIllustrations from "@/assets/project-illustrations.jpg";
+import projectIgym from "@/assets/project-gym.png";
+import projectCricket from "@/assets/project-Cricket.png";
 
 const Portfolio = () => {
   const [activeFilter, setActiveFilter] = useState("all");
@@ -18,13 +19,13 @@ const Portfolio = () => {
   const projects = [
     {
       id: 1,
-      title: "E-Commerce Platform",
-      description: "Modern e-commerce solution with React, Node.js, and Stripe integration",
-      image: projectEcommerce,
+      title: "ResearchPortal",
+      description: "Designed and developed a web platform for students and researchers to collaborate and publish papers.",
+      image: projectResearch,
       category: "web-dev",
-      tags: ["React", "Node.js", "MongoDB", "Stripe"],
-      liveLink: "https://ecommerce-demo.vercel.app",
-      githubLink: "https://github.com/sujalfuldevare/ecommerce-platform"
+      tags: ["Typescript", "Node.js", "MySql", "RazorPay"],
+      liveLink: "https://drive.google.com/file/d/1VtAj_7QD8ESMqtfh28lYuvBcw9i5xCmM/view?usp=sharing",
+      githubLink: "https://github.com/codingbot0320/ResearchPortal"
     },
     {
       id: 2,
@@ -33,8 +34,7 @@ const Portfolio = () => {
       image: projectBanking, 
       category: "product-design",
       tags: ["Figma", "UI/UX", "Mobile Design", "Prototyping"],
-      liveLink: "https://www.figma.com/proto/banking-app-design",
-      githubLink: "https://github.com/sujalfuldevare/banking-app-design"
+      
     },
     {
       id: 3,
@@ -43,18 +43,18 @@ const Portfolio = () => {
       image: projectBranding,
       category: "digital-art",
       tags: ["Branding", "Logo Design", "Illustrator", "Brand Guidelines"],
-      liveLink: "https://behance.net/gallery/brand-identity-design",
-      githubLink: "https://github.com/sujalfuldevare/brand-identity-assets"
+      liveLink: "",
+      githubLink: ""
     },
     {
       id: 4,
-      title: "SaaS Dashboard",
-      description: "Analytics dashboard with real-time data visualization and reporting",
+      title: "GyaanSagar",
+      description: "Gamified Learning Platform for Rural Students-Makes learning fun and interactive for rural students, helping them engage beyond textbooks.",
       image: projectDashboard,
       category: "web-dev",
-      tags: ["Vue.js", "D3.js", "Python", "PostgreSQL"],
-      liveLink: "https://saas-dashboard-demo.vercel.app",
-      githubLink: "https://github.com/sujalfuldevare/saas-dashboard"
+      tags: ["Vite.js", "Node.js", "Supabase", "Typescript"],
+      liveLink: "https://drive.google.com/file/d/1ETBXTYRN0OszkYYrYPf6TLbBWonP8oZW/view",
+      githubLink: "https://github.com/codingbot0320/GyaanSagar"
     },
     {
       id: 5,
@@ -63,19 +63,30 @@ const Portfolio = () => {
       image: projectFoodApp,
       category: "product-design", 
       tags: ["Figma", "User Research", "Prototyping", "Mobile UX"],
-      liveLink: "https://www.figma.com/proto/food-delivery-app",
-      githubLink: "https://github.com/sujalfuldevare/food-delivery-ux"
+      liveLink: "https://www.figma.com/design/asrmpTJ8cMFvhBqpywaEK3/Untitled?node-id=0-1&t=AESXyTthSH71JQJg-1",
+      githubLink: "https://www.figma.com/proto/asrmpTJ8cMFvhBqpywaEK3/Untitled?node-id=3-249&t=AESXyTthSH71JQJg-1"
     },
     {
       id: 6,
-      title: "Digital Illustrations",
-      description: "Collection of custom digital illustrations for various client projects",
-      image: projectIllustrations,
-      category: "digital-art",
-      tags: ["Procreate", "Illustration", "Digital Art", "Character Design"],
-      liveLink: "https://dribbble.com/sujalfuldevare/illustrations",
-      githubLink: "https://github.com/sujalfuldevare/digital-illustrations"
-    }
+      title: "Cricket Scorring Website",
+      description: "Interactive digital cricket scorecard with live scoring, over tracking, and player management.",
+      image: projectCricket,
+      category: "web-dev",
+      tags: ["Typescript", "Analysis", "Management", "Frontend"],
+      liveLink: "https://cricket-scorecard-lime.vercel.app/",
+      githubLink: "https://github.com/codingbot0320/Cricket-Scorecard-"
+    },
+    {
+      id: 7,
+      title: "Elite Fitness Branding",
+      description: "Elite Fitness is a sleek, responsive website showcasing gym services and trainers.",
+      image: projectIgym,
+      category: "web-dev",
+      tags: ["Typescript", "Tracking", "Management", "Frontend"],
+      liveLink: "https://cricket-scorecard-lime.vercel.app/",
+      githubLink: "https://github.com/codingbot0320/Elite-Fitness"
+    },
+   
   ];
 
   const filters = [
