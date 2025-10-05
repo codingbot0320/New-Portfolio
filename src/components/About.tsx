@@ -93,7 +93,7 @@ const About = () => {
                   onClick={() => window.open('#portfolio', '_self')}
                 >
                   <FileText className="w-4 h-4" />
-                  View Portfolio
+                  View My Work
                 </Button>
               </div>
             </div>
@@ -168,9 +168,9 @@ const About = () => {
 
                 {/* Interactive Timeline */}
         <div className="mt-16">
-          <h3 className="text-2xl font-bold text-center mb-8">
+         <h2 className="text-4xl md:text-5xl font-bold mb-6 text-center">
             My <span className="gradient-text">Journey</span>
-          </h3>
+          </h2>
           <div className="relative max-w-4xl mx-auto">
             <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-primary via-primary/50 to-transparent"></div>
             
@@ -196,8 +196,8 @@ const About = () => {
                 </div>
                 <div className="w-5/12 pl-8">
                   <Card className="glass-card border-white/10 p-6">
-                    <h4 className="font-semibold text-primary mb-2">First Project</h4>
-                    <p className="text-text-secondary text-sm">Created my first full-stack project, turning ideas into reality and gaining hands-on development skills.</p>
+                    <h4 className="font-semibold text-primary mb-2">Founded Sahayak NGO</h4>
+                    <p className="text-text-secondary text-sm">Started Sahayak, a non-profit helping the needy and raising funds for social causes, fostering leadership, empathy, and social impact through technology..</p>
                     <span className="text-xs text-text-muted">2023</span>
                   </Card>
                 </div>

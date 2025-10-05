@@ -39,10 +39,10 @@ const Portfolio = () => {
     {
       id: 3,
       title: "Brand Identity Design",
-      description: "Complete brand identity package for a tech startup including logo and guidelines",
+      description: "Complete brand identity package for a NGO including logo and guidelines",
       image: projectBranding,
       category: "digital-art",
-      tags: ["Branding", "Logo Design", "Illustrator", "Brand Guidelines"],
+      tags: ["Branding", "Logo Design", "Social Service", "Brand Guidelines"],
       liveLink: "",
       githubLink: ""
     },
@@ -83,8 +83,8 @@ const Portfolio = () => {
       image: projectIgym,
       category: "web-dev",
       tags: ["Typescript", "Tracking", "Management", "Frontend"],
-      liveLink: "https://cricket-scorecard-lime.vercel.app/",
-      githubLink: "https://github.com/codingbot0320/Elite-Fitness"
+      liveLink: "https://drive.google.com/file/d/10c7WcvTtIjC0Bxs0LUclf_1hhVdyZT5l/view?usp=sharing",
+      githubLink: "https://github.com/codingbot0320/Gym"
     },
    
   ];
