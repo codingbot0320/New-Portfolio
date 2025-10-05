@@ -3,115 +3,29 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Calendar, Clock, User, ArrowRight, Tag, BookOpen } from "lucide-react";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { Calendar, Clock, ArrowRight, Tag, BookOpen } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { blogPosts } from "@/data/blogData";
 
 const Blogs = ({ showAll = false }: { showAll?: boolean }) => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [email, setEmail] = useState("");
   const navigate = useNavigate();
 
-  const blogPosts = [
-    {
-      id: 1,
-      title: "The Future of Web Design: Trends to Watch in 2024",
-      excerpt: "Exploring the latest design trends that are shaping the future of web development, from AI integration to immersive experiences.",
-      date: "2024-01-15",
-      category: "Design",
-      image: "https://images.unsplash.com/photo-1559028012-481c04fa702d?w=800&q=80",
-      tags: ["Web Design", "UI/UX", "Trends"],
-      readTime: "5 min read",
-      author: {
-        name: "Sujal Fuldevare",
-        avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80"
-      }
-    },
-    {
-      id: 2,
-      title: "Building Responsive Websites: A Complete Guide",
-      excerpt: "Learn how to create websites that look and work perfectly on all devices. A comprehensive guide to responsive design principles.",
-      date: "2024-01-10",
-      category: "Development",
-      image: "https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?w=800&q=80",
-      tags: ["Responsive", "CSS", "Mobile"],
-      readTime: "8 min read",
-      author: {
-        name: "Sujal Fuldevare",
-        avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80"
-      }
-    },
-    {
-      id: 3,
-      title: "The Art of Color in Digital Design",
-      excerpt: "Understanding color theory and psychology in digital design. How to choose the perfect color palette for your next project.",
-      date: "2024-01-05",
-      category: "Design",
-      image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&q=80",
-      tags: ["Color Theory", "Design", "Psychology"],
-      readTime: "6 min read",
-      author: {
-        name: "Sujal Fuldevare",
-        avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80"
-      }
-    },
-    {
-      id: 4,
-      title: "My Journey as a Freelance Developer",
-      excerpt: "From student to successful freelancer - sharing my experiences, challenges, and lessons learned along the way.",
-      date: "2023-12-28",
-      category: "Personal",
-      image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80",
-      tags: ["Freelancing", "Career", "Tips"],
-      readTime: "10 min read",
-      author: {
-        name: "Sujal Fuldevare",
-        avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80"
-      }
-    },
-    {
-      id: 5,
-      title: "JavaScript Best Practices for Modern Development",
-      excerpt: "Essential JavaScript patterns and practices that every developer should know to write clean, maintainable code.",
-      date: "2023-12-20",
-      category: "Development",
-      image: "https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=800&q=80",
-      tags: ["JavaScript", "Best Practices", "Code Quality"],
-      readTime: "7 min read",
-      author: {
-        name: "Sujal Fuldevare",
-        avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80"
-      }
-    },
-    {
-      id: 6,
-      title: "Creating Engaging User Experiences",
-      excerpt: "Discover the principles of UX design that keep users engaged and coming back for more. Real examples and case studies included.",
-      date: "2023-12-15",
-      category: "UX",
-      image: "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=800&q=80",
-      tags: ["UX Design", "User Research", "Engagement"],
-      readTime: "9 min read",
-      author: {
-        name: "Sujal Fuldevare",
-        avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80"
-      }
-    }
-  ];
-
   const categories = ["All", "Design", "Development", "UX", "Personal"];
 
   const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
+    return new Date(dateString).toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
     });
   };
 
-  const filteredPosts = selectedCategory === "All" 
-    ? blogPosts 
-    : blogPosts.filter(post => post.category === selectedCategory);
+  const filteredPosts =
+    selectedCategory === "All"
+      ? blogPosts
+      : blogPosts.filter((post) => post.category === selectedCategory);
 
   const displayedPosts = showAll ? filteredPosts : filteredPosts.slice(0, 3);
 
@@ -208,21 +122,15 @@ const Blogs = ({ showAll = false }: { showAll?: boolean }) => {
 
                 {/* Author & Read More */}
                 <div className="flex items-center justify-between pt-4 border-t border-white/10">
-                  <div className="flex items-center space-x-3">
-                    <Avatar className="w-8 h-8">
-                      <AvatarImage src={post.author.avatar} alt={post.author.name} />
-                      <AvatarFallback>SF</AvatarFallback>
-                    </Avatar>
-                    <div className="text-sm text-text-secondary">
-                      {post.author.name}
-                    </div>
+                  <div className="text-sm text-text-secondary font-medium">
+                    {post.author.name}
                   </div>
                   <Button
                     variant="ghost"
                     size="sm"
+                    onClick={() => navigate(`/blog/${post.id}`)}
                     className="text-primary hover:text-primary-foreground hover:bg-primary group-hover:translate-x-1 transition-all duration-300"
-                  > 
-                  
+                  >
                     Read More
                     <ArrowRight className="w-4 h-4 ml-1" />
                   </Button>
@@ -235,16 +143,12 @@ const Blogs = ({ showAll = false }: { showAll?: boolean }) => {
         {/* Visit More Blogs Button - Only show on main page */}
         {!showAll && (
           <div className="text-center mb-16 fade-in-delay-2">
-            <Button 
-              onClick={() => navigate('/blogs')}
-              className="btn-hero"
-            >
+            <Button onClick={() => navigate("/blogs")} className="btn-hero">
               <BookOpen className="w-5 h-5 mr-2" />
               Visit More Blogs
             </Button>
           </div>
         )}
-
 
         {/* Newsletter Signup - Only show on blog page */}
         {showAll && (
@@ -267,7 +171,7 @@ const Blogs = ({ showAll = false }: { showAll?: boolean }) => {
                     onChange={(e) => setEmail(e.target.value)}
                     className="flex-1 bg-background/50 border-white/20 focus:border-primary"
                   />
-                  <Button 
+                  <Button
                     className="btn-hero sm:w-auto"
                     onClick={() => {
                       if (email) {
