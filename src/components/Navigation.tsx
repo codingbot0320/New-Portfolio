@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Home, User, Code, Palette, Mail, BookOpen } from "lucide-react";
+
+
 import { Button } from "@/components/ui/button";
 import { useNavigate, useLocation } from "react-router-dom";
 
@@ -89,57 +91,68 @@ const Navigation = () => {
         </div>
       </nav>
 
-      {/* Mobile Navigation - Hamburger Menu */}
-      <div className="lg:hidden fixed top-6 right-6 z-50">
-        <Button
-          onClick={() => setIsOpen(!isOpen)}
-          className={`w-14 h-14 rounded-full ${
-            isScrolled ? 'glass-card' : 'bg-background/20'
-          } backdrop-blur-md border border-white/10 hover:bg-primary/20`}
-          size="icon"
-        >
-          {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </Button>
+{/* 📱 Mobile Navigation - Centered Curved Glass Navbar */}
+<div
+  className={`lg:hidden fixed top-3 left-1/2 -translate-x-1/2 z-50 
+    flex items-center justify-around 
+    w-[90%] max-w-sm
+    rounded-full border border-white/10 backdrop-blur-xl 
+    shadow-md transition-all duration-500 px-3 py-2
+    ${isScrolled ? "bg-background/70" : "bg-background/30"}`}
+>
+  {navItems.map((item) => (
+    <button
+      key={item.id}
+      onClick={() => scrollToSection(item.id)}
+      className={`flex flex-col items-center justify-center text-[10px] transition-all duration-300 ${
+        activeSection === item.id
+          ? "text-primary scale-105"
+          : "text-text-secondary hover:text-primary"
+      }`}
+    >
+      <div
+        className={`w-7 h-7 flex items-center justify-center rounded-full transition-all duration-300 ${
+          activeSection === item.id
+            ? "bg-primary/10 shadow-md shadow-primary/30"
+            : "hover:bg-primary/10"
+        }`}
+      >
+        {item.id === "hero" && <Home className="w-4 h-4" />}
+        {item.id === "about" && <User className="w-4 h-4" />}
+        {item.id === "services" && <Code className="w-4 h-4" />}
+        {item.id === "portfolio" && <Palette className="w-4 h-4" />}
+        {item.id === "contact" && <Mail className="w-4 h-4" />}
       </div>
+      <span className="mt-1">{item.label}</span>
+    </button>
+  ))}
 
-      {/* Mobile Menu Overlay */}
-      {isOpen && (
-        <div className="lg:hidden fixed inset-0 z-40 bg-background/95 backdrop-blur-lg">
-          <div className="flex flex-col items-center justify-center h-full space-y-8">
-            {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className={`text-2xl font-medium transition-all duration-300 px-8 py-4 rounded-full ${
-                  activeSection === item.id
-                    ? 'text-primary bg-primary/10'
-                    : 'text-text-secondary hover:text-primary hover:bg-primary/5'
-                }`}
-              >
-                {item.label}
-              </button>
-            ))}
-            <button
-              onClick={() => navigate('/blogs')}
-              className="text-2xl font-medium transition-all duration-300 px-8 py-4 rounded-full text-text-secondary hover:text-primary hover:bg-primary/5"
-            >
-              Blog
-            </button>
-          </div>
-        </div>
-      )}
+  <button
+    onClick={() => navigate("/blogs")}
+    className="flex flex-col items-center justify-center text-[10px] text-text-secondary hover:text-primary transition-all duration-300"
+  >
+    <div className="w-7 h-7 flex items-center justify-center rounded-full hover:bg-primary/10">
+      <BookOpen className="w-4 h-4" />
+    </div>
+    <span className="mt-1">Blog</span>
+  </button>
+</div>
 
-      {/* Brand Logo - Fixed Position */}
-      <div className="fixed top-6 left-6 z-50">
-        <button
-          onClick={() => scrollToSection("hero")}
-          className={`px-6 py-3 rounded-full font-bold text-lg transition-all duration-300 ${
-            isScrolled ? 'glass-card' : 'bg-background/20'
-          } backdrop-blur-md border border-white/10 hover:bg-primary/10`}
-        >
-          <span className="gradient-text">SF</span>
-        </button>
-      </div>
+
+
+
+{/* Brand Logo - Fixed Position (Desktop Only) */}
+<div className="hidden lg:block fixed top-6 left-6 z-50">
+  <button
+    onClick={() => scrollToSection("hero")}
+    className={`px-6 py-3 rounded-full font-bold text-lg transition-all duration-300 ${
+      isScrolled ? 'glass-card' : 'bg-background/20'
+    } backdrop-blur-md border border-white/10 hover:bg-primary/10`}
+  >
+    <span className="gradient-text">SF</span>
+  </button>
+</div>
+
     </>
   );
 };

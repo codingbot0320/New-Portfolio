@@ -208,81 +208,44 @@ const Portfolio = () => {
             </motion.div>
           ))}
         </div>
-{/* 📱 Mobile Version - Horizontal scroll */}
-<div className="block md:hidden">
-  <motion.div
-    className="flex overflow-x-auto gap-6 pb-6 hide-scrollbar snap-x snap-mandatory"
-    initial={{ opacity: 0 }}
-    whileInView={{ opacity: 1 }}
-    transition={{ duration: 0.6 }}
-  >
-    {filteredProjects.map((project, index) => (
-      <motion.div
-        key={project.id}
-        className="min-w-[85%] snap-center flex-shrink-0"
-        initial={{ y: 50, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6, delay: index * 0.1 }}
-      >
-        <Card className="overflow-hidden bg-gradient-to-br from-navy/80 to-navy/50 border-white/10 backdrop-blur-lg shadow-xl">
-          {/* Image Section */}
-          <div className="w-full">
-            <motion.img
-              src={project.image}
-              alt={project.title}
-              className="w-full h-48 object-cover rounded-t-xl"
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.4 }}
-            />
-          </div>
-
-          {/* Text Section (separated properly) */}
-          <CardContent className="p-5 space-y-3">
-            <h3 className="text-lg font-semibold text-white">
-              {project.title}
-            </h3>
-            <p className="text-sm text-gray-300 leading-relaxed">
-              {project.description}
-            </p>
-
-            <div className="flex flex-wrap gap-2 mt-3">
-              {project.tags.map((tag, i) => (
-                <Badge
-                  key={i}
-                  className="bg-primary/10 text-primary border-primary/20 text-xs"
-                >
-                  {tag}
-                </Badge>
-              ))}
-            </div>
-
-            <div className="flex gap-3 mt-4">
-              {project.liveLink && (
-                <Button
-                  size="sm"
-                  className="btn-hero w-full"
-                  onClick={() => window.open(project.liveLink, "_blank")}
-                >
-                  Live
-                </Button>
-              )}
-              {project.githubLink && (
-                <Button
-                  size="sm"
-                  variant="outline"
-                  className="btn-outline w-full"
-                  onClick={() => window.open(project.githubLink, "_blank")}
-                >
-                  Code
-                </Button>
-              )}
-            </div>
-          </CardContent>
-        </Card>
-      </motion.div>
-    ))}
-  </motion.div>
-</div>
+{/* 📱 Mobile Layout */}
+        <div className="block md:hidden space-y-8">
+          {filteredProjects.map((project, index) => (
+            <motion.div
+              key={project.id}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="bg-navy/60 rounded-2xl overflow-hidden shadow-lg border border-white/10"
+            >
+              <img src={project.image} alt={project.title} className="w-full h-48 object-cover" />
+              <div className="p-5 space-y-3">
+                <h3 className="text-xl font-semibold text-white">{project.title}</h3>
+                <p className="text-gray-300 text-sm leading-relaxed">{project.description}</p>
+                <div className="flex flex-wrap gap-2">
+                  {project.tags.map((tag, i) => (
+                    <Badge key={i} className="bg-primary/10 text-primary border-primary/20 text-xs">
+                      {tag}
+                    </Badge>
+                  ))}
+                </div>
+                <div className="flex gap-3 pt-3">
+                  {project.liveLink && (
+                    <Button className="btn-hero flex-1" onClick={() => window.open(project.liveLink, "_blank")}>
+                      Live
+                    </Button>
+                  )}
+                  {project.githubLink && (
+                    <Button variant="outline" className="btn-outline flex-1" onClick={() => window.open(project.githubLink, "_blank")}>
+                      Code
+                    </Button>
+                  )}
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
 
 
         {/* CTA */}

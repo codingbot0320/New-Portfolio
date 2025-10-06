@@ -47,7 +47,8 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center section-padding relative overflow-hidden">
+    <section className="min-h-screen flex items-center justify-center section-padding relative overflow-hidden pt-24 md:pt-32">
+
       <div className="container-custom">
         <div className="grid lg:grid-cols-2 gap-8 items-center max-w-7xl mx-auto">
           {/* Left Column - Content */}
@@ -117,15 +118,12 @@ const Hero = () => {
 </div>
         </div>
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 fade-in-delay-2">
-          <div className="flex flex-col items-center">
-            <p className="text-text-muted text-sm mb-2">Scroll to explore</p>
-            <ArrowDown className="w-6 h-6 text-primary animate-bounce" />
-          </div>
-        </div>
+{/* Scroll Indicator (hidden on mobile) */}
+<div className="hidden md:absolute md:bottom-8 md:left-1/2 md:transform md:-translate-x-1/2 md:flex md:flex-col md:items-center fade-in-delay-2">
+  <p className="text-text-muted text-sm mb-2">Scroll to explore</p>
+  <ArrowDown className="w-6 h-6 text-primary animate-bounce" />
+</div>
       </div>
-
     </section>
   );
 };

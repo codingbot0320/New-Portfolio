@@ -10,7 +10,7 @@ const About = () => {
   const downloadResume = () => {
     // Create a mock PDF download
     const link = document.createElement('a');
-    link.href =  'https://drive.google.com/file/d/1zWX0j8K_k2SbePBxtZfi5nY8Ruiwl-2N/view?usp=sharing'; // This would be your actual PDF base64 or URL
+    link.href =  'https://drive.google.com/file/d/1o-TaOUTmO48muivKrs8F3HN6OA6JMA0z/view?usp=sharing'; // This would be your actual PDF base64 or URL
     link.download = 'Sujal_Fuldevare_Resume.pdf';
     link.click();
   };
@@ -167,7 +167,8 @@ const About = () => {
           </Card>
         </div>
 
-            <div className="hidden md:block mt-16">
+            <div className="hidden md:block mt-28 md:mt-32">
+
                 {/* Interactive Timeline */}
         <div className="mt-16">
          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-center">
