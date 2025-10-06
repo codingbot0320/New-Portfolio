@@ -70,12 +70,7 @@ const Contact = () => {
       content: "sujalfuldevare1531e@gmail.com",
       link: "mailto:sujalfuldevare1531e@gmail.com"
     },
-    {
-      icon: <Phone className="w-6 h-6" />,
-      title: "Phone", 
-      content: "+91 7899102932",
-      link: "tel:+917899102932"
-    },
+  
     {
       icon: <MapPin className="w-6 h-6" />,
       title: "Location",
