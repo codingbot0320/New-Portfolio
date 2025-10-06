@@ -105,3 +105,26 @@
     font-size: 0.75rem;
   }
 }
+/* Responsive image styling */
+img {
+  width: 100%;
+  max-width: 400px; /* Adjust based on how large you want it on desktop */
+  height: auto;
+  border-radius: 16px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Optional: tweak for smaller screens */
+@media (max-width: 768px) {
+  img {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  img {
+    max-width: 250px;
+  }
+}

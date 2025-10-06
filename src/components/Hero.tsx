@@ -97,15 +97,24 @@ const Hero = () => {
 </div>
 
           {/* Right Column - Photo */}
-          <div className="hidden lg:flex justify-center items-center relative">
-            <div className="relative">
-          <img 
-            src="/lovable-uploads/WhatsApp_Image_2025-09-22.jpg.jpg" 
-            alt="Sujal Fuldevare - Portfolio Photo" 
-                className="w-80 h-auto object-cover rounded-2xl transform rotate-6 shadow-2xl fade-in-delay-1"
-              />
-            </div>
-          </div>
+<div className="flex justify-center lg:justify-end items-center relative mt-8 lg:mt-0">
+  <div className="relative">
+    <img 
+      src="/lovable-uploads/WhatsApp_Image_2025-09-22.jpg.jpg" 
+      alt="Sujal Fuldevare - Portfolio Photo" 
+      className="
+        w-56 sm:w-64 md:w-72 lg:w-80 
+        h-auto 
+        object-cover 
+        rounded-2xl 
+        transform 
+        rotate-0 sm:rotate-3 lg:rotate-6 
+        shadow-2xl 
+        fade-in-delay-1
+      "
+    />
+  </div>
+</div>
         </div>
 
         {/* Scroll Indicator */}

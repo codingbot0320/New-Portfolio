@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { User, GraduationCap, Briefcase, Award, Download, FileText, Heart, Zap, MapPin } from "lucide-react";
 import cricketIcon from "@/assets/cricket.png";
+import { motion } from "framer-motion";
 
 const About = () => {
 
@@ -166,6 +167,7 @@ const About = () => {
           </Card>
         </div>
 
+            <div className="hidden md:block mt-16">
                 {/* Interactive Timeline */}
         <div className="mt-16">
          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-center">
@@ -234,6 +236,65 @@ const About = () => {
           </div>
         </div>
       </div>
+      </div>
+{/* Mobile Timeline */}
+<div className="block md:hidden mt-12">
+  <h2 className="text-3xl font-bold text-center mb-6">
+    My <span className="gradient-text">Journey</span>
+  </h2>
+
+  <motion.div
+    className="space-y-6 max-w-md mx-auto relative before:content-[''] before:absolute before:top-0 before:bottom-0 before:left-4 before:w-0.5 before:bg-gradient-to-b from-primary via-primary/40 to-transparent pl-10"
+    initial="hidden"
+    whileInView="show"
+    viewport={{ once: true, amount: 0.2 }}
+    variants={{
+      hidden: {},
+      show: {
+        transition: { staggerChildren: 0.25 },
+      },
+    }}
+  >
+    {[
+      {
+        title: "Started Learning",
+        text: "Discovered my passion for coding, web development, and design — laid the foundation of my tech journey.",
+        year: "2023",
+      },
+      {
+        title: "Founded Sahayak NGO",
+        text: "Started Sahayak, a non-profit helping the needy and raising funds for social causes.",
+        year: "2023",
+      },
+      {
+        title: "Professional Experience",
+        text: "Joined internships, collaborated with teams, and built real-world projects that shaped my portfolio.",
+        year: "2024",
+      },
+      {
+        title: "Present & Beyond",
+        text: "Currently working on advanced projects, preparing for entrepreneurship, and laying the foundation of my startup & NGO.",
+        year: "2025",
+      },
+    ].map((item, i) => (
+      <motion.div
+        key={i}
+        className="relative before:content-[''] before:absolute before:left-[-1.4rem] before:top-2 before:w-3 before:h-3 before:bg-primary before:rounded-full"
+        variants={{
+          hidden: { opacity: 0, y: 50 },
+          show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+        }}
+      >
+        <Card className="glass-card border-white/10 p-5 hover:scale-[1.02] transition-transform duration-300">
+          <h4 className="font-semibold text-primary mb-1">{item.title}</h4>
+          <p className="text-text-secondary text-sm">{item.text}</p>
+          <span className="text-xs text-text-muted block mt-1">{item.year}</span>
+        </Card>
+      </motion.div>
+    ))}
+  </motion.div>
+</div>
+
     </section>
   );
 };

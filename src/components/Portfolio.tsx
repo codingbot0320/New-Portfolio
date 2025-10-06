@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -96,9 +97,10 @@ const Portfolio = () => {
     { id: "digital-art", label: "Digital Art", icon: <Palette className="w-4 h-4" /> }
   ];
 
-  const filteredProjects = activeFilter === "all" 
-    ? projects 
-    : projects.filter(project => project.category === activeFilter);
+ const filteredProjects =
+    activeFilter === "all"
+      ? projects
+      : projects.filter((project) => project.category === activeFilter);
 
   return (
     <section id="portfolio" className="section-padding bg-navy-light/30">
@@ -112,7 +114,7 @@ const Portfolio = () => {
             Featured <span className="gradient-text">Projects</span>
           </h2>
           <p className="text-xl text-text-secondary max-w-3xl mx-auto">
-            Explore my latest work showcasing expertise in web development, 
+            Explore my latest work showcasing expertise in web development,
             product design, and digital creativity.
           </p>
         </div>
@@ -125,9 +127,7 @@ const Portfolio = () => {
               onClick={() => setActiveFilter(filter.id)}
               variant={activeFilter === filter.id ? "default" : "outline"}
               className={`${
-                activeFilter === filter.id 
-                  ? "btn-hero" 
-                  : "btn-outline"
+                activeFilter === filter.id ? "btn-hero" : "btn-outline"
               } flex items-center gap-2`}
             >
               {filter.icon}
@@ -136,70 +136,166 @@ const Portfolio = () => {
           ))}
         </div>
 
-        {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project) => (
-            <Card key={project.id} className="project-card group">
-              <div className="relative overflow-hidden">
-                <img 
-                  src={project.image} 
-                  alt={project.title}
-                  className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-navy/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <div className="flex space-x-4">
-                    <Button 
-                      size="sm" 
-                      className="btn-hero"
-                      onClick={() => window.open(project.liveLink, '_blank')}
-                    >
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      Live Demo
-                    </Button>
-                    <Button 
-                      size="sm" 
-                      variant="outline" 
-                      className="btn-outline"
-                      onClick={() => window.open(project.githubLink, '_blank')}
-                    >
-                      <Github className="w-4 h-4 mr-2" />
-                      Code
-                    </Button>
+        {/* 💻 Desktop Grid */}
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filteredProjects.map((project, index) => (
+            <motion.div
+              key={project.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="hover:-translate-y-2 transition-transform duration-300"
+            >
+              <Card className="project-card group overflow-hidden shadow-lg hover:shadow-primary/30 transition-all duration-300">
+                <div className="relative overflow-hidden">
+                  <motion.img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-navy/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <div className="flex space-x-4">
+                      {project.liveLink && (
+                        <Button
+                          size="sm"
+                          className="btn-hero"
+                          onClick={() =>
+                            window.open(project.liveLink, "_blank")
+                          }
+                        >
+                          <ExternalLink className="w-4 h-4 mr-2" />
+                          Live Demo
+                        </Button>
+                      )}
+                      {project.githubLink && (
+                        <Button
+                          size="sm"
+                          variant="outline"
+                          className="btn-outline"
+                          onClick={() =>
+                            window.open(project.githubLink, "_blank")
+                          }
+                        >
+                          <Github className="w-4 h-4 mr-2" />
+                          Code
+                        </Button>
+                      )}
+                    </div>
                   </div>
                 </div>
-              </div>
-              
-              <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-2 text-foreground">{project.title}</h3>
-                <p className="text-text-secondary mb-4">{project.description}</p>
-                
-                <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag, index) => (
-                    <Badge 
-                      key={index}
-                      variant="secondary"
-                      className="bg-primary/10 text-primary border-primary/20 text-xs"
-                    >
-                      {tag}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-semibold mb-2 text-foreground">
+                    {project.title}
+                  </h3>
+                  <p className="text-text-secondary mb-4">
+                    {project.description}
+                  </p>
+
+                  <div className="flex flex-wrap gap-2">
+                    {project.tags.map((tag, index) => (
+                      <Badge
+                        key={index}
+                        variant="secondary"
+                        className="bg-primary/10 text-primary border-primary/20 text-xs"
+                      >
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
           ))}
         </div>
+{/* 📱 Mobile Version - Horizontal scroll */}
+<div className="block md:hidden">
+  <motion.div
+    className="flex overflow-x-auto gap-6 pb-6 hide-scrollbar snap-x snap-mandatory"
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
+    transition={{ duration: 0.6 }}
+  >
+    {filteredProjects.map((project, index) => (
+      <motion.div
+        key={project.id}
+        className="min-w-[85%] snap-center flex-shrink-0"
+        initial={{ y: 50, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6, delay: index * 0.1 }}
+      >
+        <Card className="overflow-hidden bg-gradient-to-br from-navy/80 to-navy/50 border-white/10 backdrop-blur-lg shadow-xl">
+          {/* Image Section */}
+          <div className="w-full">
+            <motion.img
+              src={project.image}
+              alt={project.title}
+              className="w-full h-48 object-cover rounded-t-xl"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.4 }}
+            />
+          </div>
+
+          {/* Text Section (separated properly) */}
+          <CardContent className="p-5 space-y-3">
+            <h3 className="text-lg font-semibold text-white">
+              {project.title}
+            </h3>
+            <p className="text-sm text-gray-300 leading-relaxed">
+              {project.description}
+            </p>
+
+            <div className="flex flex-wrap gap-2 mt-3">
+              {project.tags.map((tag, i) => (
+                <Badge
+                  key={i}
+                  className="bg-primary/10 text-primary border-primary/20 text-xs"
+                >
+                  {tag}
+                </Badge>
+              ))}
+            </div>
+
+            <div className="flex gap-3 mt-4">
+              {project.liveLink && (
+                <Button
+                  size="sm"
+                  className="btn-hero w-full"
+                  onClick={() => window.open(project.liveLink, "_blank")}
+                >
+                  Live
+                </Button>
+              )}
+              {project.githubLink && (
+                <Button
+                  size="sm"
+                  variant="outline"
+                  className="btn-outline w-full"
+                  onClick={() => window.open(project.githubLink, "_blank")}
+                >
+                  Code
+                </Button>
+              )}
+            </div>
+          </CardContent>
+        </Card>
+      </motion.div>
+    ))}
+  </motion.div>
+</div>
+
 
         {/* CTA */}
         <div className="text-center mt-16">
           <p className="text-lg text-text-secondary mb-6">
             Interested in working together? Let's create something amazing!
           </p>
-          <Button 
-            className="btn-hero text-lg" 
+          <Button
+            className="btn-hero text-lg"
             size="lg"
             onClick={() => {
-              const contactSection = document.getElementById('contact');
-              contactSection?.scrollIntoView({ behavior: 'smooth' });
+              const contactSection = document.getElementById("contact");
+              contactSection?.scrollIntoView({ behavior: "smooth" });
             }}
           >
             Start Your Project
