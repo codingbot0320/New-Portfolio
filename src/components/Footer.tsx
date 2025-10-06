@@ -104,7 +104,7 @@ const Footer = () => {
               variant="outline" 
               className="btn-outline text-lg" 
               size="lg"
-              onClick={() => window.open('https://calendly.com/sujalfuldevare', '_blank')}
+              onClick={() => window.open('https://calendly.com/sujalfuldevare1531', '_blank')}
             >
               Schedule a Call
             </Button>
